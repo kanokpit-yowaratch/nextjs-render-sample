@@ -17,10 +17,17 @@ export default async function SSRPage() {
 	const data = await getData();
 
 	return (
-		<div>
-			<h1>Server-side Rendering (SSR)</h1>
-			<p>Title: {data.title}</p>
-			<p>Body: {data.body}</p>
+		<div className="p-8">
+			<h1 className="font-semibold">Server-side Rendering (SSR)</h1>
+			<h4>
+				เซิร์ฟเวอร์จะสร้าง HTML ของหน้าเว็บและส่งไปยังเบราว์เซอร์ของผู้ใช้ เป็นตัวช่วยเพิ่มความเร็วและ SEO
+				ให้เว็บไซต์
+			</h4>
+
+			<div className="my-6">
+				<p>Title: {data.title}</p>
+				<p>Body: {data.body}</p>
+			</div>
 		</div>
 	);
 }

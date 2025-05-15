@@ -15,10 +15,19 @@ export default async function SSGPage() {
 	const data = await getData();
 
 	return (
-		<div>
-			<h1>Static Site Generation (SSG)</h1>
-			<p>Title: {data.title}</p>
-			<p>Body: {data.body}</p>
+		<div className="p-8">
+			<h1 className="font-semibold">Static Site Generation (SSG)</h1>
+			<h4>
+				การสร้างเว็บไซต์แบบ Static โดยที่เว็บไซต์จะถูก Render และสร้างเป็นไฟล์ HTML, CSS และ JavaScript
+				ล่วงหน้า เมื่อมีผู้เยี่ยมชมเว็บไซต์
+				ไฟล์เหล่านี้จะถูกส่งตรงไปยังเบราว์เซอร์โดยไม่ต้องมีการประมวลผลเพิ่มเติม
+				ทำให้เว็บไซต์โหลดเร็วและมีความปลอดภัยสูง
+			</h4>
+
+			<div className="my-6">
+				<p>Title: {data.title}</p>
+				<p>Body: {data.body}</p>
+			</div>
 		</div>
 	);
 }

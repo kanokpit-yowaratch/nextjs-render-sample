@@ -15,13 +15,17 @@ export default function CSRPage() {
 	}, []);
 
 	return (
-		<div>
-			<h1>Client-side Rendering (CSR)</h1>
+		<div className="p-8">
+			<h1 className="font-semibold">Client-side Rendering (CSR)</h1>
+			<h4>
+				ไคลเอ็นต์จะทำการสร้างและแสดงผลหน้าเว็บโดยใช้ JavaScript ซึ่งจะแสดง HTML พื้นฐานก่อน จากนั้น request
+				ข้อมูลจากเซิร์ฟเวอร์แบบ Asynchronous และอัปเดตหน้าเว็บโดยไม่ต้องโหลดใหม่
+			</h4>
 			{data ? (
-				<>
+				<div className="my-6">
 					<p>Title: {data.title}</p>
 					<p>Body: {data.body}</p>
-				</>
+				</div>
 			) : (
 				<p>Loading...</p>
 			)}
