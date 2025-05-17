@@ -1,9 +1,3 @@
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-	title: 'Server-side Rendering (SSR)',
-};
-
 async function getData() {
 	// Fetch ข้อมูลแบบเรียลไทม์ในทุก request
 	const res = await fetch('https://jsonplaceholder.typicode.com/posts/2', {
@@ -11,6 +5,17 @@ async function getData() {
 	});
 	if (!res.ok) throw new Error('Failed to fetch data');
 	return res.json();
+}
+
+export async function generateMetadata() {
+	const data = await getData();
+	return {
+		title: data.title,
+		description: 'Server Side Rendering (SSR)',
+		openenGraph: {
+			images: []
+		}
+	}
 }
 
 export default async function SSRPage() {
