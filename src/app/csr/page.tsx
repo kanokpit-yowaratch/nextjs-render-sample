@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import LazyModal from '@/components/csr/LazyModal';
 
 export default function CSRPage() {
 	const [data, setData] = useState<{ title: string; body: string | any }>();
@@ -27,8 +28,16 @@ export default function CSRPage() {
 					<p>Body: {data.body}</p>
 				</div>
 			) : (
-				<p>Loading...</p>
+				<p>Loading data from API...</p>
 			)}
+
+			<div className="mb-8 text-center">
+				<LazyModal
+					buttonText="Open Lazy Modal"
+					modalTitle="Modal Lazy Loading"
+					contentTitle="Dynamic Import Content"
+				/>
+			</div>
 		</div>
 	);
 }
