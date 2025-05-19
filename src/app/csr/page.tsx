@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import LazyModal from '@/components/csr/LazyModal';
 
 export default function CSRPage() {
-	const [data, setData] = useState<{ title: string; body: string | any }>();
+	const [data, setData] = useState<{ title: string; body: string | null }>();
 
 	useEffect(() => {
 		async function fetchData() {
