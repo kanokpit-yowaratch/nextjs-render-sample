@@ -18,7 +18,9 @@ export default async function SSGPage() {
 
 			<div className="flex items-center gap-2 my-6">
 				Workshop เพิ่มเติม:
-				<Link href={`https://github.com/kanokpit-yowaratch/ssg-workshop`}>SSG Workshop</Link>
+				<Link
+					href={`https://github.com/kanokpit-yowaratch/ssg-workshop`}
+					className="text-indigo-700">SSG Workshop</Link>
 			</div>
 		</div>
 	);
